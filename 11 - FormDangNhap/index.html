@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form đăng nhập</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form{
+            
+            background-size:auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 60%;
+            height: auto;
+            
+        }
+
+        h1{
+            margin: 20px 50px;
+            color: rgb(174, 15, 15);
+            
+        }
+        input{
+            padding: 5px;
+            padding-left: 10px;
+            border-radius: 1em;
+            border: 2px dotted red;
+            background-color: #ffa4a4;
+            opacity: 0.7;
+            margin-left: 5px;
+        }
+
+        button{
+            margin: 20px;
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+            background-color: rgb(174, 15, 15);
+            border-width:  2px;
+            border-radius: 0.5rem;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 20px;
+            border: 3px red dotted;
+            border-radius: 0.8rem;
+            padding: 3% 15%;
+            background: url('./hinh/login.jpg') no-repeat bottom right;
+        }
+
+        .login-form{
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .user-input-container{
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+        .user-input{
+            margin: 10px;
+            display: flex;
+        }
+        #greeting{
+            color: #ae0f0f;
+            font-style: italic;
+        }
+    </style>
+    <script>
+        const greeting = (e) =>{
+            const userName = document.getElementById('userName').value;
+            const password = document.getElementById('password').value;
+            if(userName.length === 0 || password.length === 0){
+                alert('Hãy nhập đủ thông tin');
+            } else{
+                document.getElementById('greeting-name').innerHTML += userName
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Form đăng nhập</h1>
+    <form class="login-form">
+        <div class="user-input-container">
+            <div class="user-input">
+                <label>Tên người dùng</label>
+                <input  id="userName">
+            </div>
+            <div class="user-input">
+                <label>Mật khẩu</label>
+                <input type="password" id="password">
+            </div>
+        </div>
+        <button type="button" onclick="greeting()">Đăng nhập</button>
+        <lable id="greeting">Chào bạn <span id="greeting-name" style="font-weight: bold;"></span></lable>
+    </form>
+</div>
+</body>
+
+</html>

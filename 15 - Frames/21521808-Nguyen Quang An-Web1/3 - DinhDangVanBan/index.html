@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Định dạng văn bản</title>
+    <style>
+      h1 {
+        color: rgb(99, 236, 99);
+      }
+      .red {
+        color: red;
+      }
+      .code-block {
+        color: blue;
+        background-color: rgb(152, 149, 149);
+        padding: 10px 100px;
+        width: 40vw;
+        font-family: "Courier New", Courier, monospace;
+        display: flex;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Định dạng văn bản</h1>
+    <div>
+      <p>
+        <strong><u>Hóa học:</u></strong> <i>Nước:</i
+        ><span class="red"> H<sub>2</sub>O</span>; <i>Axit Sunfuric:</i>
+        <span class="red">H<sub>2</sub>SO<sub>4</sub></span>
+      </p>
+      <p>
+        <strong><u>Toán học:</u></strong> <i>Phương trình bậc 2:</i
+        ><span class="red"> ax<sup>2</sup> + bx + c = 0</span>
+      </p>
+      <p>
+        <strong><u>Tin học:</u></strong> <i>Vòng lặp for</i>:
+      </p>
+      <div class="code-block">
+        <p>
+          int tong = 0; <br />
+          <br />
+          for(int i = 1; i <= 10; i++)
+          <br />
+          <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tong += i;
+          <br />
+          <br />
+          printf("Tong cac so tu 1 => 10 la: %d\n",tong);
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let res = '';
+        const handleClickButton = () => {
+
+            let name = document.getElementById('name').value;
+            let address = document.getElementById('address').value;
+            let phone = document.getElementById('phone').value;
+            let isVietNamese = document.getElementById('isVietNamese').checked;
+            let isPlane = document.getElementById('plane').checked;
+            let isCar = document.getElementById('car').checked;
+            let tour = document.getElementById('tour').value;
+            let adult = document.getElementById('adult').value;
+            let child = document.getElementById('child').value;
+            let additionNote = document.getElementById('addition-note').value;
+
+            console.log(name);
+            console.log(address);
+            console.log(phone);
+            console.log('isVietNamese', isVietNamese);
+            console.log('plane', isPlane);
+            console.log('car', isCar);
+            console.log(tour);
+            console.log(adult);
+            console.log(child);
+            console.log(additionNote);
+
+
+            if (name === '') {
+                alert('name');
+                alert('Some field are missing, please fill its');
+                return;
+            }
+
+            if (address === '') {
+                alert('Some field are missing, please fill its');
+                return;
+            }
+
+            if (phone === '') {
+                alert('Some field are missing, please fill its');
+                return;
+            }
+
+            if (!(isCar || isPlane)) {
+                alert('Some field are missing, please fill its');
+                return;
+            }
+
+            if (adult === '' && child === '') {
+                alert('Some field are missing, please fill its');
+                return;
+            }
+
+            res = 'Bạn đã đăng ký thành công!!!';
+            document.getElementById('res').innerHTML = res;
+            document.getElementById('res').style.display = 'table-cell';
+
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+        }
+
+        table {
+            border: blue solid 2px;
+            border-collapse: collapse;
+            background-color: #ffffcd;
+            width: 40vw;
+        }
+
+        td {
+            padding: 5px;
+            border: blue solid 2px;
+        }
+
+        textarea {
+            width: 80%;
+        }
+
+        .tour-resgister-form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tour-resgister-form">
+
+
+        <h1>ĐĂNG KÝ DU LỊCH</h1>
+        <form id="my-form">
+            <table>
+                <tr>
+                    <td>
+                        <p>Họ tên</p>
+                    </td>
+                    <td><input type="text" id="name" name="name" /></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Địa chỉ</p>
+                    </td>
+                    <td><textarea rows="6" id="address" name="address"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Điện thoại</p>
+                    </td>
+                    <td><input id="phone" name="phone"></input></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Khách Việt Nam</p>
+                    </td>
+                    <td><input id="isVietNamese" type="checkbox"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Chọn tour</p>
+                    </td>
+                    <td>
+                        <select id="tour">
+                            <optgroup label="Miền Bắc">
+                                <option value="Hanoi-Halong-Sapa">Hà Nội - Hạ Long - Sapa</option>
+                                <option value="Hanoi-ChuaHuong-NinhBinh">Hà Nội - Chùa Hương - Ninh Bình</option>
+                                <option value="Hanoi-CatBa-TuanChau">Hà Nội - Cát Bà - Tuần Châu</option>
+                            </optgroup>
+                            <optgroup label="Miền Trung">
+                                <option value="Hue-BachMa-DaNang">Huế - Bạch Mã - Đà Nẵng</option>
+                                <option value="NhaTrang-DaLat">Nha Trang - Đà Lạt</option>
+                                <option value="BuonMeThuot-GiaLai-Kontum">Buôn Mê Thuột - Gia Lai - Kontum</option>
+                            </optgroup>
+                            <optgroup label="Miền Nam">
+                                <option value="TpHCM-CanTho-CaMau">TpHCM - Cần Thơ - Cà Mau</option>
+                                <option value="PhuQuoc-ConDao">Phú Quốc - Côn Đảo</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Phương tiện</p>
+                    </td>
+                    <td>
+                        <input id="plane" type="radio" value="plane" name="transport">
+                        <label>Máy bay</label>
+                        <input id="car" type="radio" value="car" name="transport">
+                        <label>Xe du lịch</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <fieldset>
+                            <legend>Số lượng đoàn khách</legend>
+                            <div style="display: flex;">
+                                <div style="display: flex;">
+                                    <label for="adult">Người lớn</label>
+                                    <input id="adult" type="text" name="adult" style="height: fit-content;" />
+                                </div>
+                                <div style="display: flex; margin: 0px 10px;">
+                                    <label for="child">Trẻ em</label>
+                                    <input type="text" id="child" name="child" style="height: fit-content;"/>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <p>Ghi chú thêm</p>
+                    </td>
+                    <td>
+                        <textarea id="addition-note" rows="6">
+
+                    </textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <button onclick="handleClickButton()" type="button">Đồng ý</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="display: none; text-align: center; color: red; font-weight: bold;" colspan="2" id="res">
+
+                    </td>
+
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

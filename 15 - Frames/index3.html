@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            display: list-item;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 5px;
+            text-decoration: none;
+            color: white;
+
+        }
+            
+        .menu-item-container {
+            padding: 2px;
+            padding-left: 20px;
+            background: url(./images/nen-lien-ket-muc-luc.png) no-repeat left;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .nav-bar {
+            background: url(./images/nen-hoa-muc-luc.png) center repeat-x, url(./images/bg-mucluc.png);
+            float: left;
+            padding: 20px;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            padding-top: 0px;
+            color: white;
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"
+        style="text-align: center; background: url(./images/nen-hoa-co.jpg) repeat-x fixed; height: 100px; padding-top: 20px;">
+        <h1 style="color: white; text-shadow: 1px 1px 1px purple;">Bài tập ngôn ngữ HTML</h1>
+    </div>
+    <div style="display: flex; height: 100vh;">
+        <div class="nav-bar" width="20%" height="100%">
+            <div class="list">
+                <div class="menu-item-container">
+                    <a href="./21521808-Nguyen Quang An-Web1/1 - Me!/index.html">Mẹ</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-Nguyen Quang An-Web1/2 - PhuQuoc/index.html">Phú Quốc</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-Nguyen Quang An-Web1/3 - DinhDangVanBan/index.html">Định dạng văn bản</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-Nguyen Quang An-Web1/4 - TruyenNguNgon/index.html">Truyện ngụ ngôn</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-Nguyen Quang An-Web1/5 - ShopHoaTuoi/index.html">Shop hoa tươi</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-NguyenQuangAn-Web2/6 - Excite@Home/index.html">Excite@Home</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-NguyenQuangAn-Web2/7 - ChuongTrinhHoc/index.html">Chương trình học</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-NguyenQuangAn-Web2/8 - DoubleRich/index.html">Double Rich</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-NguyenQuangAn-Web2/9 - Free.com/index.html">Free.com</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="./21521808-NguyenQuangAn-Web2/10 - VietNam/index.html">Việt Nam</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="../11 - FormDangNhap/index.html">Form đăng nhập</a>
+                </div>
+                <div class="menu-item-container">
+
+                    <a href="../12 - PhieuDangKy/index.html">Phiếu đăng ký</a>
+                </div>
+                <div class="menu-item-container">
+                    <a href="../13 - DatTour/index.html">Đặt tour</a>
+                </div>
+
+            </div>
+        </div>
+        <iframe class="content-container" src="./21521808-Nguyen Quang An-Web1/1 - Me!/index.html" width="80%"
+            name="content-container" style="background: transparent;"></iframe>
+
+        <script>
+            // JavaScript to handle iframe navigation
+            var links = document.querySelectorAll('a');
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    links.forEach((link) => {
+                        link.style.color = 'white';
+                    })
+                    event.preventDefault();
+                    event.currentTarget.style.color = 'yellow';
+                    var href = this.getAttribute('href');
+                    if (href) {
+                        // Set the src attribute of the content-container iframe
+                        document.querySelector('.content-container').src = href;
+
+                    }
+                });
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>
