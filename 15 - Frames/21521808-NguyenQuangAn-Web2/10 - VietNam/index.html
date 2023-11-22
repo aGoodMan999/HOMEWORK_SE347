@@ -51,6 +51,14 @@
             overflow: auto;
             /* Scroll if the content overflows */
         }
+
+        @media screen and (max-width: 600px) {
+            .three-columns {
+                column-count: 1;
+                height: fit-content;
+                overflow:scroll;
+            }
+        }
     </style>
 
 </head>
